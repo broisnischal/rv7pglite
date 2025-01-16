@@ -1,0 +1,41 @@
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    container_name: minecraft
+    environment:
+      EULA: "TRUE"
+      TYPE: "VANILLA"
+      VERSION: "LATEST"
+      MEMORY: "2G"
+      DIFFICULTY: "normal"
+      GAMEMODE: "survival"
+      mem_limit: 2g
+      MAX_PLAYERS: "10"
+      ALLOW_NETHER: "true"
+      PVP: "true"
+      ONLINE_MODE: "false" # Changed this to allow TLauncher
+      SERVER_NAME: "My Minecraft Server"
+    ports:
+      - "25565:25565"
+    volumes:
+      - ./minecraft-data:/data
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+# services:
+#   minecraft:
+#     image: itzg/minecraft-server
+#     environment:
+#       EULA: "TRUE"
+#       TYPE: "SPIGOT"
+#       ONLINE_MODE: "false"
+#     ports:
+#       - "25565:25565"
+#   geyser:
+#     image: ghcr.io/geysermc/geyser
+#     ports:
+#       - "19132:19132/udp"
+#     environment:
+#       REMOTE: "minecraft:25565"
+
+# s140yiR0SZOATJ91dnd
