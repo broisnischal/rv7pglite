@@ -1,3 +1,49 @@
+# services:
+#   minecraft:
+#     image: itzg/minecraft-server
+#     container_name: minecraft
+#     environment:
+#       EULA: "TRUE"
+#       TYPE: "VANILLA"
+#       VERSION: "LATEST"
+#       MEMORY: "2G"
+#       DIFFICULTY: "normal"
+#       GAMEMODE: "survival"
+#       mem_limit: 2g
+#       MAX_PLAYERS: "10"
+#       ALLOW_NETHER: "true"
+#       PVP: "true"
+#       ONLINE_MODE: "false"
+#       SERVER_NAME: "My Minecraft Server"
+      
+#       # Server security settings
+#       ENABLE_COMMAND_BLOCK: "true"
+#       ENABLE_RCON: "true"
+#       RCON_PASSWORD: "Test@123s"  # Change this!
+#       RCON_PORT: "28016"
+      
+#       # Additional gameplay settings
+#       SPAWN_PROTECTION: "16"
+#       VIEW_DISTANCE: "10"
+#       MOTD: "Welcome to My Server!"
+#       LEVEL_TYPE: "DEFAULT"
+#       GENERATE_STRUCTURES: "true"
+#       SPAWN_ANIMALS: "true"
+#       SPAWN_MONSTERS: "true"
+#       SPAWN_NPCS: "true"
+#       FORCE_GAMEMODE: "false"
+#       WHITE_LIST: "false"
+#       # OPS: "player1,player2"  # Uncomment and add operator usernames
+      
+#     ports:
+#       - "25565:25565"  # Minecraft server port
+#       - "28016:28016"  # RCON port
+#     volumes:
+#       - ./minecraft-data:/data
+#     restart: unless-stopped
+#     tty: true
+#     stdin_open: true
+
 services:
   minecraft:
     image: itzg/minecraft-server
