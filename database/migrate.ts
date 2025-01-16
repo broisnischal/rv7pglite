@@ -15,6 +15,7 @@ import migrations from "./migrations.json";
 export async function migrate() {
   // dialect and session will appear to not exist...but they do
 
+  // @ts-expect-error
   db.dialect.migrate(migrations, db._.session, {
     migrationsTable: "drizzle",
   } satisfies Omit<MigrationConfig, "migrationsFolder">);
