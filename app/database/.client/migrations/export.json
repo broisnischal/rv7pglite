@@ -1,0 +1,1 @@
+[{"sql":["CREATE TABLE \"users\" (\n\t\"id\" text PRIMARY KEY NOT NULL,\n\t\"first_name\" text NOT NULL,\n\t\"last_name\" text NOT NULL,\n\t\"email\" text,\n\t\"phone\" text NOT NULL\n);\n"],"bps":true,"folderMillis":1737040861226,"hash":"f4d300f4ac543a8d8f3e9fb6e31d798348ced95e610957db9264e145981d02d8"}]

@@ -1,4 +1,4 @@
-import { db } from ".";
+import { db } from "../app/database/.client";
 import migrations from "./migrations.json";
 
 async function ensureMigrationsTable() {

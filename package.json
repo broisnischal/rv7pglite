@@ -9,11 +9,21 @@
     "typecheck": "react-router typegen && tsc",
     "migrate": "tsx --inspect ./database/migrate.ts",
     "generate": "drizzle-kit generate",
-    "db:generate": "drizzle-kit generate && tsx --inspect ./src/compile-migrations.ts"
+    "db:generate": "drizzle-kit generate",
+    "db:client:migration:drop": "drizzle-kit drop --config=drizzle.client.config.ts",
+    "db:client:migration:generate": "drizzle-kit generate --config=drizzle.client.config.ts",
+    "db:client:migration:generate:custom": "drizzle-kit generate --custom --config=drizzle.client.config.ts",
+    "db:client:migration:export": "tsx app/database/scripts/export-local-db-migrations.ts",
+    "db:migration:generate": "npm run db:client:migration:generate && npm run db:client:migration:export",
+    "start:docker": "run-s docker:*",
+    "docker:build": "docker build -t drizzle-on-indexeddb .",
+    "docker:run": "docker run --rm -d -p 3000:3000 drizzle-on-indexeddb"
   },
   "dependencies": {
+    "@electric-sql/pglite": "^0.2.15",
     "@react-router/node": "^7.1.1",
     "@react-router/serve": "^7.1.1",
+    "drizzle-kit": "^0.30.2",
     "drizzle-orm": "^0.38.3",
     "isbot": "^5.1.17",
     "react": "^19.0.0",

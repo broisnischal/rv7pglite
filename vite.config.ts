@@ -10,5 +10,17 @@ export default defineConfig({
       plugins: [tailwindcss, autoprefixer],
     },
   },
+  optimizeDeps: {
+    exclude: ["@electric-sql/pglite"], // Exclude `@electric-sql/pglite` from pre-bundling
+  },
+  build: {
+    target: "es2022", // Ensure WebAssembly support
+    assetsInlineLimit: 0,
+  },
+  server: {
+
+    // Allow serving WASM files from the specified directory
+
+  },
   plugins: [reactRouter(), tsconfigPaths()],
 });
