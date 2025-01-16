@@ -21,10 +21,13 @@
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.2.15",
+    "@huggingface/transformers": "^3.3.1",
     "@react-router/node": "^7.1.1",
     "@react-router/serve": "^7.1.1",
+    "@tensorflow/tfjs": "^4.22.0",
     "drizzle-kit": "^0.30.2",
     "drizzle-orm": "^0.38.3",
+    "face-api.js": "^0.22.2",
     "isbot": "^5.1.17",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
