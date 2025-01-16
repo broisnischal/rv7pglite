@@ -9,7 +9,7 @@
     "typecheck": "react-router typegen && tsc",
     "migrate": "tsx --inspect ./database/migrate.ts",
     "generate": "drizzle-kit generate",
-    "db:generate": "drizzle-kit generate && bun ./src/compile-migrations.ts"
+    "db:generate": "drizzle-kit generate && tsx --inspect ./src/compile-migrations.ts"
   },
   "dependencies": {
     "@electric-sql/pglite": "^0.2.15",
